@@ -1,8 +1,8 @@
 <?php
 
-// Create User Profile Blocks to display data captured by ACF plugin
+// Create User Profile Blocks to display data captured by ACF fields.
 
-function my_acf_block_init() {
+function md_acf_block_init() {
 
     if (function_exists('acf_register_block_type')) {
 
@@ -33,9 +33,9 @@ function my_acf_block_init() {
     }
 }
 
-add_action('acf/init', 'my_acf_block_init');
+add_action('acf/init', 'md_acf_block_init');
 
-function my_user_fields_block_render_callback($block, $content = '', $is_preview = false, $post_id = 0) {
+function md_user_fields_block_render_callback($block, $content = '', $is_preview = false, $post_id = 0) {
     $user_id = get_current_user_id();
     $block_name = str_replace('acf/', '', $block['name']); 
 
